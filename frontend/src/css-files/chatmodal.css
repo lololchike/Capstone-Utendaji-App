@@ -72,7 +72,7 @@ justify-content: center;
     
 }
 
-::placeholder {
+::placeholder, .option {
     color: burlywood;
   }
 

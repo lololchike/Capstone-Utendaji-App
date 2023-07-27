@@ -1,0 +1,101 @@
+#create{
+    position: absolute;
+    width: 100%;
+    min-height: 100vh;
+    background-color: rgb(18, 7, 7, .5);
+}
+
+#createForm{
+    font-size: small;
+    width: 30%;
+    margin: auto;
+    min-height: 70vh;
+    display: flex;
+    flex-direction: column;
+    margin-top: 5%;
+    background-color: #461668;
+    color: white;
+    border-radius: 10px;
+    font-family: Helvetica;
+
+}
+
+#create-user-h2{
+    display: grid;
+    grid-template-columns: 1fr 5fr 1fr;
+    margin-bottom: 2%;
+  }
+
+  #create-user-h2 img{
+    height: 2.2vh;
+    margin: auto;
+  }
+
+  #create-user-h2 img:hover{
+    cursor: pointer;
+  }
+
+.createFormElement{
+    width: 80%;
+    margin: auto;
+    margin-bottom: 2.5%;
+    height: 3.2vh;
+    border-radius: 5px;
+}
+
+#createFormElementselects{
+    width: 81%;
+    margin: auto;
+    height: 3.8vh;
+    margin-bottom: 2%;
+    border-radius: 5px;
+}
+
+#names{
+    display: grid;
+    margin: auto;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin-bottom: 2%;
+    width: 85.3%;
+
+}
+
+.sucess-backdrop{
+    width: 100%;
+    top: 3%;
+    position: absolute;
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    background-color: rgba(18, 7, 7, .1);
+}
+
+.sucess{
+    position: absolute;
+    left: 36%;
+    background-color: white;
+    min-height: 20vh;
+    width: 26%;
+    margin: auto;
+    border-radius: 10px;
+    display: flex;
+    flex-flow: column;
+    padding: 1%;
+}
+
+.sucess img, .sucess button{
+    width: 25%;
+    height: 40%;
+    margin: auto;
+    margin-bottom: 3%;
+}
+.sucess button{
+    background-color: #461668;
+    border-radius: 5px;
+    color: white;
+}
+
+.sucess button:hover{
+    cursor: pointer;
+    background-color: #290ec2;
+}

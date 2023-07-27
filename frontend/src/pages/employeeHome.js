@@ -1,14 +1,37 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from 'react-router-dom';
 import ChatModal from "../componets/chat-modal";
 import MyJobs from "../componets/myjobs";
 import Performance from "../componets/myperformance";
-import Team from "../componets/myteam";
+import Team, {teamHeading} from "../componets/myteam";
 import "../css-files/employeeHome.css";
+import {useAuthContext} from "../hooks/useAuthContex"
 
 
 const EmployeeHome = (props) => {
   const [isAdmin, setIsAdmin] = useState(false)
+  const { currentUser, dispatch } = useAuthContext();
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+    if (currentUser) {
+      dispatch({ type: "LOGIN", payload: currentUser });
+    }
+    setLoading(false);
+  }, [dispatch]);
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
+
+
+  const logout = () =>{
+localStorage.removeItem("currentUser")
+localStorage.removeItem("teamHeading")
+dispatch({type: "LOGOUT"})
+  }
   
   const openChat = () => {
     document.getElementById("chat-modal").style.display = "block";
@@ -20,10 +43,20 @@ const EmployeeHome = (props) => {
     document.getElementById("content-heading").innerHTML = props.performanceHeading;
   };
   const showTeam = () => {
-        document.getElementById("middlegrid").style.display = "none";
-        document.getElementById("job-grid").style.display = "none";
-        document.getElementById("team-grid").style.display = "grid";
-        document.getElementById("content-heading").innerHTML = props.teamHeading;
+    const storedTeamHeading = localStorage.getItem("teamHeading");
+    if (storedTeamHeading) {
+      // If teamHeading is available in localStorage, use it
+      document.getElementById("middlegrid").style.display = "none";
+      document.getElementById("job-grid").style.display = "none";
+      document.getElementById("team-grid").style.display = "grid";
+      document.getElementById("content-heading").innerHTML = storedTeamHeading;
+    } else {
+      // If teamHeading is not available in localStorage, use the default value
+      document.getElementById("middlegrid").style.display = "none";
+      document.getElementById("job-grid").style.display = "none";
+      document.getElementById("team-grid").style.display = "grid";
+      document.getElementById("content-heading").innerHTML = props.teamHeading;
+    }
       };
       const showJobs = () => {
         document.getElementById("middlegrid").style.display = "none";
@@ -48,15 +81,15 @@ const EmployeeHome = (props) => {
             <img className="navbaritem" src="message.png" alt="" />
           </li>
           <li>
-           <Link to="/"> <img className="navbaritem" src="log-out.png" alt="" /></Link>
+           <img className="navbaritem" src="log-out.png" alt="" onClick={logout} />
           </li>
         </ul>
       </div>
       <div id="sidebar">
         <div id="avatardiv">
-          <h3>{(props.staffName)[0]}{(props.staffName)[(props.staffName).indexOf(" ") + 1]}</h3>
+          <h3>{currentUser.user.firstName[0]}{currentUser.user.lastName[0]}</h3>
         </div>
-        <h4 id="employeeNameonsidebar">{props.staffName}</h4>
+        <h4 id="employeeNameonsidebar">{currentUser.user.firstName} {currentUser.user.lastName}</h4>
         <p id="employee-tittle">{props.staffRole}</p>
         <strong onClick={showPerformance}>
           <p>{props.performanceTitle}</p>
@@ -64,7 +97,7 @@ const EmployeeHome = (props) => {
         <strong onClick = {showTeam}>
           <p>{props.adminTeamButton}</p>
         </strong>
-        <strong onClick = {showJobs}>
+        <strong onClick = {props.showJobs}>
           <p>{props.adminJobButton}</p>
         </strong>
         <strong>
@@ -168,7 +201,11 @@ const EmployeeHome = (props) => {
         <h6 id="footer-left">
           © {new Date().getFullYear()} Copyright Group-1{" "}
         </h6>
-        <h6 id="footer-right">group-1@groups.org </h6>
+        <div id="footer-right">
+        <h6 >group-1@groups.org </h6>
+        </div>
+        
+
       </div>
       <ChatModal />
     </div>
@@ -176,6 +213,12 @@ const EmployeeHome = (props) => {
   
 };
 EmployeeHome.defaultProps = {
+  showJobs: () => {
+    document.getElementById("middlegrid").style.display = "none";
+    document.getElementById("team-grid").style.display = "none";
+    document.getElementById("job-grid").style.display = "grid";
+    document.getElementById("content-heading").innerHTML = "Jobs you've applied";
+  },
   performanceTitle: "My Performance",
   staffName : "Elisa Marie",
   staffRole : "Employee",

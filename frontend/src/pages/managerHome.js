@@ -1,5 +1,4 @@
 import EmployeeHome from "./employeeHome";
-import ManagerTeam from "../componets/managerTeam";
 import EditEmployee from "../componets/editEmployee";
 
 const ManagerHome = () => {
@@ -8,7 +7,6 @@ const ManagerHome = () => {
 
     return ( 
         <>
-        <ManagerTeam/>
         <EmployeeHome 
         performanceTitle = "My Team Stats"
         staffName = "Temayo James"

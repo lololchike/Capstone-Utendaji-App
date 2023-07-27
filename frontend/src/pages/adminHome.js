@@ -1,8 +1,14 @@
 import EmployeeHome from "./employeeHome";
+import CreateUser from "../componets/createUser"
+import { useState } from "react";
 
 
-
-const AdminHome = () => {
+export const AdminHome = () => {
+    const [showCreateForm, setShowCreateForm] = useState(false)
+    
+    const createWorker = ()=>{
+        setShowCreateForm(true)
+    }
 
 
     return ( 
@@ -15,9 +21,11 @@ const AdminHome = () => {
         performanceHeading = "All Teams"
         teamHeading = "All Teams"
         adminTeamButton = "Create Team"
-        adminJobButton = "Create New Employee"
+        adminJobButton = "Create New User"
+        showJobs = {createWorker}
 
         />
+       {showCreateForm &&  <CreateUser setShowCreateForm = {setShowCreateForm}/>} 
         </>
      );
 }
