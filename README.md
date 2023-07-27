@@ -1,9 +1,9 @@
 # Capstone-Utendaji-App
 ## Project Name: 
-UTENDAJI-PERFORMANCE TRACKER
+UTENDAJI-PERFORMANCE TRACKER!
 
 ## Authors: 
-Lucy, Josephine, Bill, Kenneth
+Lucy, Josephine, Bill, Kenneth.
 
 ## Description of the project: 
 A tool designed to help enhance productivity in employees. It allows the management to track and monitor the performance of each employee in real-time, providing them with data and insights that can be used to identify areas where improvements are needed.
