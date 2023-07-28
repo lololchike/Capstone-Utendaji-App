@@ -1,4 +1,5 @@
 ## Project Name
+
    ### Utendaji Perfomance Tracker
 
 ## Live Link
@@ -26,7 +27,7 @@ Hosted on AWS EC2
    * Express
    * Node.js
    * Mongodb
-3. GraphQL used for perfomance data management (implementation ongoing)
+3. GraphQL used for performance data management (implementation ongoing)
 4. Socket.IO for the chat feature. 
 
 ## Work In Progress
@@ -35,12 +36,12 @@ Hosted on AWS EC2
 * Chat feature implementation. 
 
 ## Project Description
-The tool helps enhance the productivity of employees by showing them realtime perfomace data. It allows the management to track and monitor the performance of each employee in real-time, providing them with data and insights that can be used to identify areas where improvements are needed. I also allows all memebrs of the organization to chat with each other.
+The tool helps enhance the productivity of employees by showing them realtime performance data. It allows the management to track and monitor the performance of each employee in real-time, providing them with data and insights that can be used to identify areas where improvements are needed. I also allows all members of the organization to chat with each other.
    
 ## Setup Instructions
-* Click on the livelink or;
+* Click on the live link or;
 * Clone the Repository in VScode
-* Run npm install to install dependancies
+* Run npm install to install dependencies
 * create a .env file on your local repo and connect to your mongoDB url
 * cd into frontend folder, open terminal and run npn start
 * open another terminal window, cd into backend folder, and run npn start
@@ -55,5 +56,5 @@ The admin's role is mainly user management: creating, editing, and deleting user
 #### NB:
 There is still lot's of ongoing works on the app and we will regularly update every new feature that we implement.
 
-## Lincence and Copyright Information
-   (c) Group1 - 2023. 
+## License and Copyright Information
+   (c) Group1 - 2023.
