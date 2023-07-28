@@ -137,10 +137,10 @@ cursor: pointer;
 #job-grid {
   position: absolute;
   display: grid;
-  grid-template-columns: auto auto;
+  grid-template-columns:repeat(2, 1fr);
   width: 40%;
   background-color: #16113A;
-  margin-top: 13%;
+  margin-top: 12%;
   left: 29.4%;
   grid-gap: 1.6%;
   border-color: #16113A;
@@ -148,11 +148,37 @@ cursor: pointer;
   border-style: solid;
   border-radius: 10px;
   font-size: small;
-  min-height: max-content;
+  min-height: 63vh;
   display: none;
-  grid-template-rows: 6vh;
-  grid-auto-rows: 6vh;
+}
 
+#allteams{
+    position: absolute;
+    display: flex;
+    width: 40%;
+    background-color: #16113A;
+    margin-top: 12%;
+  left: 29.4%;
+  border-color: #16113A;
+  border-width: 1.5vh;
+  border-style: solid;
+  border-radius: 10px;
+  color: white;
+  flex-flow: column;
+}
+
+#allteams h5{
+    display: flex;
+    margin: auto;
+    background-color: #272953;
+    width: 65%;
+    height: 6vh;
+    border-radius: 10px;
+    color: white;
+    align-items: center;
+    flex-flow: row;
+    padding: 0 4%; 
+    margin-bottom: 2%;
 }
 
 
@@ -173,7 +199,7 @@ cursor: pointer;
     
 }
 
-.team-boxes h5:hover{
+#allteams h5:hover, .team-boxes h5:hover{
     background-color: #373954;
     cursor: pointer;
 }

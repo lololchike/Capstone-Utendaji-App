@@ -45,12 +45,12 @@ try{
   if (!validator.isEmail(email)){
     throw Error("Please enter a valid email")
   }
-  if (!validator.isStrongPassword(password)){
-  throw Error("That password is too weak")
-  }
   const emailexists = await User.findOne({email})
   if(emailexists){
       throw Error("Email already registered")
+  }
+  if (!validator.isStrongPassword(password)){
+  throw Error("That password is too weak")
   }
   const usernameexists = await User.findOne({userName})
   if(usernameexists){

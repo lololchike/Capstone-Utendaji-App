@@ -1,6 +1,7 @@
 import EmployeeHome from "./employeeHome";
 import CreateUser from "../componets/createUser"
 import { useState } from "react";
+import AllTeams from "../componets/allTeams";
 
 
 export const AdminHome = () => {
@@ -26,6 +27,7 @@ export const AdminHome = () => {
 
         />
        {showCreateForm &&  <CreateUser setShowCreateForm = {setShowCreateForm}/>} 
+       <AllTeams/>
         </>
      );
 }

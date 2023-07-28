@@ -7,11 +7,11 @@ import Team, {teamHeading} from "../componets/myteam";
 import "../css-files/employeeHome.css";
 import {useAuthContext} from "../hooks/useAuthContex"
 
-
 const EmployeeHome = (props) => {
   const [isAdmin, setIsAdmin] = useState(false)
   const { currentUser, dispatch } = useAuthContext();
   const [loading, setLoading] = useState(true);
+  // const [showEditEmployeeModal, setShowEditEmployeeModal] = useState(true)
 
   useEffect(() => {
     const currentUser = JSON.parse(localStorage.getItem("currentUser"));
@@ -193,7 +193,7 @@ dispatch({type: "LOGOUT"})
       </div>
 <h4 id="content-heading">{props.performanceHeading}</h4>
       
-     {!props.isAdmin && <Team />}
+     {!props.isAdmin && <Team  setShowEditEmployeeModal = {props.setShowEditEmployeeModal}/>}
      {!props.isAdmin && <Performance />}
      {!props.isAdmin && <MyJobs />}
       

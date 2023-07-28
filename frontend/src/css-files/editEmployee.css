@@ -1,24 +1,27 @@
 #editEmployeebdrop{
-    display: none;
     position: absolute;
-    background-color: rgba(135, 136, 150, 0.5);
+    background-color: rgba(165, 165, 168, 0.4);
     width: 100%;
-    min-height: 100%;
+   height: 100vh;
 }
 
 #editEmployee{
     display: flex;
     flex-flow: column;
+    flex-wrap: wrap;
     width: 35%;
     margin: auto;
-    margin-top: 7%;
-    background-color: rgb(89, 75, 224);
+    margin-top: 4.5%;
+    background-color: rgb(42, 32, 126);
     min-height: 50vh;
-    padding: 4%;
+    padding: 2%;
     border-radius: 10px;
+    color: white;
 }
 
-#editEmployee h6{
+#editEmployee h4{
+    display: grid;
+    grid-template-columns: 1fr 17fr 1fr;
     margin: 0%;
     padding: 0;
     color: white;
@@ -28,3 +31,12 @@
     margin-top: 0;
     height: 3.5vh;
 }
+
+#t, #r, #m, #c, #p, #d, #a{
+    margin-bottom: .5%;
+}
+
+
+#cross:hover{
+    cursor: pointer;
+  }

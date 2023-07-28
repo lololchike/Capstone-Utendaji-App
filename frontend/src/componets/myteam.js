@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useAuthContext } from "../hooks/useAuthContex";
 import axios from "axios";
 
-const Team = () => {
+const Team = (props) => {
   const { currentUser } = useAuthContext();
   const [loading, setLoading] = useState(true);
   const [team, setTeam] = useState([]);
@@ -70,6 +70,7 @@ const Team = () => {
   }
 
   return (
+    <>
     <div id="team-grid">
       {team &&
         team.map((member) => (
@@ -78,12 +79,15 @@ const Team = () => {
             <h5>
               {member.firstName} {member.lastName}
             </h5>
-            {isManager && <img src="editemployee.png" alt="" />}
+            {isManager && <img src="editemployee.png" alt="" 
+          onClick={() => props.setShowEditEmployeeModal(true)}
+            />}
           </div>
         ))}
       <br />
       <br />
     </div>
+    </>
   );
 };
 
