@@ -206,7 +206,6 @@ cursor: pointer;
 
 .team-boxes:hover{
     background-color: #373954;
-    /* cursor: pointer; */
 }
 
 .KPI-boxes{
@@ -253,7 +252,6 @@ cursor: pointer;
 }
 #footer-right h6{
     margin: 0;
-    /* font-size: 45%; */
 }
 #footer-left{
     position: absolute;
@@ -266,7 +264,6 @@ cursor: pointer;
 
 #footer-left h6, #footer-left h5{
     margin: 0;
-    /* font-size: 45%; */
 }
 #sidebar strong {
     display: block;

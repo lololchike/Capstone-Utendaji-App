@@ -1,5 +1,5 @@
 #chat{
-    margin-top: 11%;
+    margin-top: 10%;
     margin-left: 35%;
     height: 63vh;
     width: 28%;
@@ -14,6 +14,7 @@
     position: absolute;
     background-color: rgb(18, 7, 7, .5);
     display: none;
+    z-index: 2;
 
 }
 
