@@ -30,6 +30,7 @@
 #cross{
     margin-top: 0;
     height: 3.5vh;
+    z-index: 2;
 }
 
 #t, #r, #m, #c, #p, #d, #a{
