@@ -1,4 +1,5 @@
 import "../css-files/editEmployee.css"
+import cross from "../images/close.png"
 
 const EditEmployee = (props) => {
 
@@ -8,7 +9,7 @@ const EditEmployee = (props) => {
         <h4><p></p>
             Today's Stats for Elisa Marie
             
-            <img src="close.PNG" id="cross" alt="" onClick={()=>props.setShowEditEmployeeModal(false)} />
+            <img src={cross} id="cross" alt="" onClick={()=>props.setShowEditEmployeeModal(false)} />
         </h4>
         <label htmlFor="h">Handling Time</label>
             <input type="text" />
