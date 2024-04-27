@@ -3,7 +3,7 @@
    ### Utendaji Perfomance Tracker
 
 ## Live Link
-  The site is live at http://ec2-34-207-191-119.compute-1.amazonaws.com/
+  The site is live at http://ec2-54-85-7-34.compute-1.amazonaws.com
 
 ## Authors Information
    * Josephine Kemuma
